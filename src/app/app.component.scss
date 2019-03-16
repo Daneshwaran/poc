@@ -1,0 +1,23 @@
+mat-drawer-container{
+    height: 100%;
+    .side__nav{
+        width: 250px;
+        background: #f8f9fa;
+        height: 100%;
+        padding: 50px 10px;
+        p{
+            margin: 0px;
+        }
+        .side__item{
+            text-align: center;
+            font-size: 18px;
+            padding: 5px;
+            margin: 10px;
+        }
+        .side__item:hover{
+            background: #cccccc;
+            cursor: pointer;
+            color: #1976d2;
+        }
+    }
+}
