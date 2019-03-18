@@ -1,0 +1,11 @@
+section.new-from__component{
+    background: #f8f9fa;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin-top: 3px;
+    mat-card{
+        margin: 15px auto;
+        width: fit-content;
+    }
+}

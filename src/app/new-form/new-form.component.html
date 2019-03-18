@@ -1,3 +1,31 @@
-<p>
-  new-form works!
-</p>
+<section class="new-from__component">
+
+
+  <mat-card>
+
+    
+      <p>
+
+          <mat-form-field appearance="outline">
+            <!-- <mat-label>Outline form field</mat-label> -->
+            <input matInput [formControl]="nokiaId" required >
+            <mat-error *ngIf="nokiaId.invalid">{{getNokiaIdErrorMessage()}}</mat-error>
+            <mat-hint>Enter your 6 digits Nokia ID</mat-hint>
+          </mat-form-field>
+        </p>
+      <p>
+
+          <mat-form-field appearance="outline">
+            <!-- <mat-label>Outline form field</mat-label> -->
+            <input matInput [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </p>
+    
+  </mat-card>
+
+
+</section>
+
+

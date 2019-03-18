@@ -1,4 +1,3 @@
-;
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,14 +12,15 @@ import { MyRequestViewComponent } from './my-request-view/my-request-view.compon
 import { SubstitutionComponent } from './substitution/substitution.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { ConfigurationsComponent } from './configurations/configurations.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const appRoutes = [
-  { path: 'new-form', component: NewFormComponent },
-  { path: 'edit-form', component: EditFormComponent  },
-  { path: 'disp-form', component: DispFormComponent  },
-  { path: 'my-request-view', component: MyRequestViewComponent },
-  { path: 'substitution', component: SubstitutionComponent  },
-  { path: 'analytics', component: AnalyticsComponent  },
-  { path: 'configurations', component: ConfigurationsComponent  },
+  { path: 'new-form', component: NewFormComponent,data:{title:"New Form"} },
+  { path: 'edit-form', component: EditFormComponent,data:{title:"Edit Form"}  },
+  { path: 'disp-form', component: DispFormComponent,data:{title:"Display Form"}  },
+  { path: 'my-request-view', component: MyRequestViewComponent,data:{title:"My Request View"} },
+  { path: 'substitution', component: SubstitutionComponent, data:{title:"Substitution"}  },
+  { path: 'analytics', component: AnalyticsComponent,data:{title:"Analytics"}  },
+  { path: 'configurations', component: ConfigurationsComponent,data:{title:"Configuration"}  },
 ];
 @NgModule({
   declarations: [
@@ -36,11 +36,12 @@ const appRoutes = [
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     AppRoutingModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     )
   ],
   providers: [],
