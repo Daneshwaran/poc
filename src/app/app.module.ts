@@ -13,12 +13,18 @@ import { SubstitutionComponent } from './substitution/substitution.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { ConfigurationsComponent } from './configurations/configurations.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
 const appRoutes = [
+  { path: 'home', component: HomeComponent,data:{title:"Home"} },
   { path: 'new-form', component: NewFormComponent,data:{title:"New Form"} },
+  { path: '*', redirectTo: '/home',pathMatch: 'full' },
+  { path: '', redirectTo: '/home',pathMatch: 'full' },
   { path: 'edit-form', component: EditFormComponent,data:{title:"Edit Form"}  },
   { path: 'disp-form', component: DispFormComponent,data:{title:"Display Form"}  },
   { path: 'my-request-view', component: MyRequestViewComponent,data:{title:"My Request View"} },
   { path: 'substitution', component: SubstitutionComponent, data:{title:"Substitution"}  },
+  { path: 'search', component: SearchComponent,data:{title:"Search"}  },
   { path: 'analytics', component: AnalyticsComponent,data:{title:"Analytics"}  },
   { path: 'configurations', component: ConfigurationsComponent,data:{title:"Configuration"}  },
 ];
@@ -31,7 +37,9 @@ const appRoutes = [
     MyRequestViewComponent,
     SubstitutionComponent,
     AnalyticsComponent,
-    ConfigurationsComponent
+    ConfigurationsComponent,
+    HomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,0 +1,47 @@
+section.edit-from__component{
+    background: #f8f9fa;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin-top: 3px;
+    mat-card{
+        margin: 15px auto;
+        width: 800px;
+        p{
+          margin-bottom: 5px;
+        }
+        .tools__container,.scopes__container{
+          border: solid 1px black;
+          border-radius:2px;
+          padding: 10px; 
+            input[type="checkbox"] {
+                display: none;
+              }
+              
+              input[type="checkbox"] + label {
+                -webkit-transition: all 500ms ease;
+                transition: all 500ms ease;
+                font-size: 12px;
+                cursor: pointer;
+                // border-radius: 50px;
+                background-color: #fff;
+                border:solid 2px #124191;
+                padding: 0.4rem;
+                display: inline-block;
+                -moz-user-select: -moz-none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                margin: 5px;
+              }
+              
+              
+              input[type="checkbox"]:checked + label {
+                -webkit-transition: all 500ms ease;
+                transition: all 500ms ease;
+                background-color: #124191; color: white; border-color:#124191;
+              }
+              
+        }
+    }
+}
