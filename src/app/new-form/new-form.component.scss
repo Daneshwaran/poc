@@ -1,11 +1,28 @@
-section.new-from__component{
+section.new-from__component {
     background: #f8f9fa;
     height: 100%;
     width: 100%;
     position: absolute;
     margin-top: 3px;
-    mat-card{
-        margin: 15px auto;
+    mat-card {
+        margin: 30px;
         width: fit-content;
+        mat-horizontal-stepper {
+            .introduction__container{
+                .main__heading{
+                    text-align: center;
+                }
+                h2,h3{
+                    color: #124191;
+                }
+            }
+            .form__container {
+                width: fit-content;
+                margin: auto;
+            }
+            .stepper__button{
+                text-align: right;
+            }
+        }
     }
 }

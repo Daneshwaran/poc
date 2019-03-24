@@ -1,31 +1,163 @@
 <section class="new-from__component">
-
-
   <mat-card>
 
-    
-      <p>
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Introduction</ng-template>
+          <div class="introduction__container">
+            <div class="main__heading">
 
-          <mat-form-field appearance="outline">
-            <!-- <mat-label>Outline form field</mat-label> -->
-            <input matInput [formControl]="nokiaId" required >
-            <mat-error *ngIf="nokiaId.invalid">{{getNokiaIdErrorMessage()}}</mat-error>
-            <mat-hint>Enter your 6 digits Nokia ID</mat-hint>
-          </mat-form-field>
-        </p>
-      <p>
+              <h2>HR Access Request Tool - HRART</h2>
+            </div>
+            <h3>Submit New HR Access Request</h3>
+            <ul>
+              <li>Request Standard HR accesses for your HR role to HR tools with below form.</li>
+              <li>Predefined Standard HR access rights are defaulted per selected HR role. Some optional accesses can be
+                selected if needed.</li>
+              <li>Request can be changed to Special access type for requesting additional accesses if Standard accesses
+                are not enough.</li>
+              <li>Request will be sent for confirmation to the Line Manager and other approvers when needed.</li>
+              <br>
+              <mat-divider></mat-divider><br>
+              <li>Access can also be requested for other person.</li>
+              <li>Nokia account is required for requesting access.</li>
+              <li>Please note employees and managers are receiving access to HR tools automatically.</li>
+              <br>
+              <mat-divider></mat-divider><br>
+              <li>Please find step-by-step instructions in the<a href="/"> HR Access Request Tool - HRART site</a>.</li>
+            </ul>
 
-          <mat-form-field appearance="outline">
-            <!-- <mat-label>Outline form field</mat-label> -->
-            <input matInput [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            <mat-hint></mat-hint>
-          </mat-form-field>
-        </p>
-    
+          </div>
+          <div class="stepper__button">
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>User Information</ng-template>
+          <div class="form__container">
+            <p>
+              <mat-form-field appearance="outline">
+
+                <input matInput [formControl]="nokiaId" required>
+                <mat-error *ngIf="nokiaId.invalid">{{getNokiaIdErrorMessage()}}</mat-error>
+                <mat-hint>Enter your 6 digits Nokia ID</mat-hint>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+
+                <input matInput [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                <mat-hint></mat-hint>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="stepper__button">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Access Information</ng-template>
+          <div class="form__container">
+            <p>
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="thirdCtrl" required>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="thirdCtrl" required>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="thirdCtrl" required>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="thirdCtrl" required>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="thirdCtrl" required>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <input matInput formControlName="thirdCtrl" required>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="stepper__button">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>NDA Agreement</ng-template>
+        Non-Disclosure Agreement for Nokia HR Applications:<br><br>The purpose of this document is to emphasize the
+        confidentiality related to HR Access Rights. With the HR Access Rights you will gain accesses to certain Nokia
+        HR Applications (defined in the HR Access Rights intranet page) and to personal data of Nokia employees and
+        External Resource in your responsibility area in those Nokia HR Applications.<br><br>Therefore we require you to
+        read carefully this non-disclosure agreement and accept it in order to receive HR Access Rights.<br><br>By
+        signing this I agree to do the following:<br>
+        <ul>
+          <li>Undertake to keep strictly confidential any and all personal data I have access to or that is made
+            available to me in any form or manner. I will not discuss, disclose or otherwise make the personal data
+            available to any unauthorized persons within Nokia or to anyone outside Nokia.<br></li>
+          <li>Not disclose personal data to or discuss the data with any unauthorized persons. This also means that I
+            will not disclose to or discuss with any line manager about personal data concerning any employee outside of
+            the organization the line manager is responsible for. In all cases I will only disclose or discuss personal
+            data with authorized persons on a <i>need to know</i> basis.<br></li>
+          <li>Not use or review personal data for my own interest but only when it is needed to perform my work
+            responsibilities. Unnecessary data mining can be monitored and regarded as failure to follow data protection
+            guidelines.<br></li>
+          <li>Not maintain my own employment related data in Nokia HR applications such as P24 (SAP HR system) or
+            Manager Self Services (MSS).<br></li>
+          <li>Not approve any myHRportal requests that relate to my own employment.<br></li>
+          <li>Maintain in myHRportal under Employee Self Services (ESS) only my own employment related data. The data
+            entered in ESS must be accurate and legally correct.<br></li>
+          <li>Not deliver my username and password to any other user.<br></li>
+          <li>Respect and fully abide by all data protection and privacy laws and regulations and related Nokia internal
+            policies and guidelines.<br></li>
+          <li>Respect and follow the confidentiality obligations by using the information only in an appropriate ways
+            never disclosing details to unauthorized persons.<br></li>
+          <li>Always attempt to compile reports that do not contain any personal data. Reports should contain personal
+            data only when this is necessary for a specific business purposes and even then must not contain unnecessary
+            or excessive amounts of personal data.<br></li>
+          <li>Disclose reports containing personal data only to authorized persons having a clear need to know such
+            information. I will deliver these reports only inside Nokia. <br></li>
+          <li>Delete the report once it is no longer necessary for the purpose it was originally provided to me for.
+          </li>
+        </ul><br>Violations of the obligations set out here or failure to handle personal data in a professional manner
+        may subject to disciplinary action (including termination of employment), sanctions, damages or legal action by
+        Nokia. This agreement is also binding after leaving Nokia.<br>
+        <div class="stepper__button">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+
+
+
+
+
+
+
+
+
+
+
   </mat-card>
-
-
 </section>
-
-
