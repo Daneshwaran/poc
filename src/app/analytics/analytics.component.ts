@@ -106,7 +106,7 @@ export class AnalyticsComponent implements OnInit {
 
     })
 
-    let chart_timeline = am4core.create("chart_timelinediv", am4charts.XYChart);
+    let chart_timeline = am4core.create("chartdiv-requests__TimeLine", am4charts.XYChart);
 
     chart_timeline.colors.step = 2;
     chart_timeline.maskBullets = false;
