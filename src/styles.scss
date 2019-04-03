@@ -1,7 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-html,body{
+
+@font-face {
+    font-family: FabricMDL2Icons;
+    src: url(https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.35.woff2) format("woff2"), url(https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.35.woff) format("woff"), url(https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.35.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+.ms-Icon {
+    display: inline-block;
+    font-family: FabricMDL2Icons;
+    font-style: normal;
+    font-weight: 400;
+    speak: none
+}
+
+
+
+html,
+body {
     height: 100%;
     margin: 0px;
     font-family: 'Montserrat';
+}
+
+.ui-autocomplete-items {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 260px;
+    max-height: 175px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px 0px;
+}
+
+.ui-autocomplete-list-item {
+    list-style-type: none;
+
+    div {
+        border-bottom: 0px;
+    }
+}
+
+.ui-autocomplete-multiple-container {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+
+    border-radius: 5px;
+        border-left-style: none;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        min-width: 200px;
+        width: fit-content;
+    li {
+        list-style-type: none;
+        input{
+            border: none;
+            &:focus{
+                outline: 0px;
+            }
+        }
+    }
+}
+
+.pi-times:before {
+    display: inline-block;
+    font-family: FabricMDL2Icons;
+    font-style: normal;
+    font-weight: 400;
+    content: "\E711";
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.ui-autocomplete-token{
+    width: 280px;
+    border-radius: 16px;
+    margin-right: 5px;
+    background-color: #f4f4f4;
+    &:hover{
+
+        background: #eaeaea;
+    }
+}
+.ui-autocomplete-token-icon {
+    float: right;
+    cursor: pointer;
 }

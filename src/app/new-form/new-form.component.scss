@@ -4,25 +4,141 @@ section.new-from__component {
     width: 100%;
     position: absolute;
     margin-top: 3px;
+
     mat-card {
         margin: 30px;
         width: fit-content;
+
         mat-horizontal-stepper {
-            .introduction__container{
-                .main__heading{
+            .introduction__container {
+                .main__heading {
                     text-align: center;
                 }
-                h2,h3{
+
+                h2,
+                h3 {
                     color: #124191;
                 }
             }
+
             .form__container {
                 width: fit-content;
                 margin: auto;
             }
-            .stepper__button{
+
+            .stepper__button {
                 text-align: right;
             }
         }
     }
+
+
+    .custom__field {
+        border-radius: 0 5px 5px 0;
+        border-left-style: none;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: fit-content;
+    }
+
+    .user-item {
+        display: flex;
+        align-items: center;
+        border: 0px;
+        padding: 7px 12px;
+
+        .user-img {
+            img {
+                border-radius: 100%;
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        .user-info {
+            padding-top: 0px;
+            padding-right: 24px;
+            padding-bottom: 0px;
+            padding-left: 16px;
+            min-width: 0px;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .user-name {
+                white-space: nowrap;
+                color: rgb(51, 51, 51);
+                font-weight: 400;
+                font-size: 14px;
+                text-overflow: ellipsis;
+
+                overflow: hidden;
+            }
+
+            .user-properties {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: rgb(102, 102, 102);
+                font-weight: 400;
+                font-size: 12px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &:hover {
+            background: rgb(244, 244, 244);
+            cursor: pointer;
+        }
+    }
+
+
+    .selectedItem {
+        font-size: 14px;
+        padding-right: 12px;
+        display: flex;
+        align-items: center;
+        text-overflow: ellipsis;
+        cursor: default;
+
+        .__img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+
+            img {
+                opacity: 1;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                animation-name: css-1;
+                animation-duration: 0.367s;
+                animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+                animation-fill-mode: both;
+            }
+        }
+
+        .__name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+    @keyframes css-1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
 }

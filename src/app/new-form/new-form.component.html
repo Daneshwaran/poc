@@ -54,6 +54,54 @@
                 <mat-hint></mat-hint>
               </mat-form-field>
             </p>
+
+
+
+            <div>
+              <p-autoComplete matInput [formControl]="spuser" [suggestions]="users"
+                (completeMethod)="filterSPUserSingle($event)" field="DisplayText" [size]="30" [minLength]="3"
+                [multiple]="true">
+
+                <ng-template let-spuser pTemplate="item" styleClass="wid100">
+
+                  <div class="ui-helper-clearfix user-item">
+                    <div class="user-img">
+                      <img
+                        src="{{'https://nokia.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname='+ spuser.EntityData.Email}}" />
+                    </div>
+                    <div class="user-info">
+                      <div class="user-name">
+                        {{spuser.DisplayText}}
+                      </div>
+                      <div class="user-properties">
+                        {{spuser.EntityData.Title}}
+                      </div>
+                    </div>
+                  </div>
+
+                </ng-template>
+
+                <ng-template let-value pTemplate="selectedItem">
+                  <span class="selectedItem">
+                    <div class="__img">
+                      <img
+                        src="{{'https://nokia.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname='+ value.EntityData.Email}}"
+                        alt="">
+                    </div><span class="__name">{{value.DisplayText}}</span>
+                  </span>
+                </ng-template>
+              </p-autoComplete>
+            </div>
+
+
+
+
+
+
+
+
+
+
           </div>
           <div class="stepper__button">
             <button mat-button matStepperPrevious>Back</button>

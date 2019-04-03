@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MaterialModule} from './material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { NewFormComponent } from './new-form/new-form.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { DispFormComponent } from './disp-form/disp-form.component';
@@ -15,10 +16,13 @@ import { ConfigurationsComponent } from './configurations/configurations.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { SPService } from './services/sp.service';
+import {   HttpClientModule } from '@angular/common/http';
 const appRoutes = [
   { path: 'home', component: HomeComponent,data:{title:"Home"} },
   { path: 'new-form', component: NewFormComponent,data:{title:"New Form"} },
   { path: '*', redirectTo: '/home',pathMatch: 'full' },
+  { path: 'index.aspx', redirectTo: '/home',pathMatch: 'full' },
   { path: '', redirectTo: '/home',pathMatch: 'full' },
   { path: 'edit-form', component: EditFormComponent,data:{title:"Edit Form"}  },
   { path: 'disp-form', component: DispFormComponent,data:{title:"Display Form"}  },
@@ -46,13 +50,16 @@ const appRoutes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    AutoCompleteModule,
     MaterialModule,
+    
+    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(
       appRoutes
     )
   ],
-  providers: [],
+  providers: [SPService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,26 @@
+.analytics__component {
+    background: #f8f9fa;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin-top: 3px;
+    padding: 30px;
+
+
+    .requests__HR {
+        height: 500px;
+        width: 500px;
+        #chartdiv-requests__HR {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .requests__TimeLine {
+        height: 500px;
+        width: 500px;
+        #chartdiv-requests__TimeLine {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
