@@ -1,12 +1,10 @@
 .analytics__component {
     background: #f8f9fa;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     position: absolute;
     margin-top: 3px;
     padding: 30px;
-
-
     .requests__HR {
         height: 500px;
         width: 90%;
@@ -20,6 +18,15 @@
         height: 500px;
         width: 90%;
         #chartdiv-requests__TimeLine {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .tools__useage {
+        margin: 30px;
+        height: 500px;
+        width: 90%;
+        #chartdiv-tools__useage {
             height: 100%;
             width: 100%;
         }

@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.router.events.pipe(
         filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.route = this.activatedRoute.children[0].data.value.title;
+      // this.route = this.activatedRoute.children[0].data.value.title;
     });
 }
 
