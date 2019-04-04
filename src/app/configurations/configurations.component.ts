@@ -40,10 +40,10 @@ export class ConfigurationsComponent implements OnInit {
         { from: "HRBP Head", to: "GHRS Team Action", value: 2 },
         { from: "Country HR Head for Germany", to: "GHRS Validation", value: 1 },
         { from: "GHRS Validation", to: "HR Operations TSS", value: 1 },
-        { from: "GHRS Team Action", to: "Completed", value: 2 },
-        { from: "GHRS Validation", to: "HR Operations TSS", value: 6 },
-        { from: "I", to: "J", value: 1 },
-        { from: "H", to: "J", value: 9 }
+        { from: "GHRS Team Action", to: "Completed", value: 10 },
+        { from: "GHRS Validation", to: "HR Operations TSS", value: 7 },
+        { from: "IT Service Owner", to: "GHRS Validation", value: 1 },
+        { from: "HR Operations TSS", to: "GHRS Team Action", value: 9 }
       ];
 
       let hoverState = chart.links.template.states.create("hover");
